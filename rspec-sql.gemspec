@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.files       = Dir["lib/**/*.rb"]
   s.homepage    = "https://github.com/openfoodfoundation/rspec-sql"
   s.license     = "AGPL-3.0-or-later"
-  s.required_ruby_version = ">= 3.1", "< 4"
+  s.required_ruby_version = ">= 3.1"
 
   s.metadata = {
     "changelog_uri" =>

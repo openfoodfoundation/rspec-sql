@@ -36,6 +36,7 @@ GEM
       concurrent-ruby (~> 1.0)
     json (2.7.2)
     language_server-protocol (3.17.0.3)
+    mini_portile2 (2.8.9)
     minitest (5.22.2)
     mutex_m (0.2.0)
     parallel (1.24.0)
@@ -74,7 +75,8 @@ GEM
       parser (>= 3.3.0.4)
     ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
-    sqlite3 (1.7.2-x86_64-linux)
+    sqlite3 (1.7.2)
+      mini_portile2 (~> 2.8.0)
     timeout (0.4.1)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
@@ -90,4 +92,4 @@ DEPENDENCIES
   sqlite3
 
 BUNDLED WITH
-   2.4.21
+   4.0.12

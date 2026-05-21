@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name        = "rspec-sql"
-  s.version     = "0.0.3"
+  s.version     = "0.0.4"
   s.summary     = "RSpec::Sql matcher"
   s.description = "RSpec matcher for database queries."
   s.authors     = ["Maikel Linke", "Open Food Network contributors"]
@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.files       = Dir["lib/**/*.rb"]
   s.homepage    = "https://github.com/openfoodfoundation/rspec-sql"
   s.license     = "AGPL-3.0-or-later"
-  s.required_ruby_version = ">= 3.1", "< 4"
+  s.required_ruby_version = ">= 3.2"
 
   s.metadata = {
     "changelog_uri" =>
@@ -20,6 +20,6 @@ Gem::Specification.new do |s|
     "rubygems_mfa_required" => "true",
   }
 
-  s.add_runtime_dependency "activesupport"
-  s.add_runtime_dependency "rspec"
+  s.add_dependency "activesupport"
+  s.add_dependency "rspec"
 end

@@ -133,6 +133,8 @@ RSpec.describe RSpec::Sql do
   end
 
   it "prints user-friendly message expecting summary" do
+    skip "testing old ruby" unless RUBY_VERSION < "3.4"
+
     message = error_message do
       expect { User.last }.to query_database(
         update: { user: 1 }
@@ -148,6 +150,31 @@ RSpec.describe RSpec::Sql do
       @@ -1 +1 @@
       -:update => {:user=>1},
       +:select => {:users=>1},
+
+
+      Full query log:
+
+      User Load  SELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?
+    TXT
+  end
+
+  it "prints user-friendly message expecting summary" do
+    skip "testing new ruby" if RUBY_VERSION < "3.4"
+
+    message = error_message do
+      expect { User.last }.to query_database(
+        update: { user: 1 }
+      )
+    end
+
+    expect(message).to eq <<~TXT
+      Expected database queries: {update: {user: 1}}
+      Actual database queries:   {select: {users: 1}}
+
+      Diff:
+      @@ -1 +1 @@
+      -:update => {user: 1},
+      +:select => {users: 1},
 
 
       Full query log:
